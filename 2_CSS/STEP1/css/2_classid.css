@@ -1,0 +1,36 @@
+/* 
+    * id와 class 개념
+    * class : 자주 사용되는 스타일에 적용하는 것 
+    * ex) 글자색상을 red로 설정할시
+    *     .class name{속성명 : 속성값;}
+    *     .fontColor {color : red;}
+
+    * id : id를 사용할시 class 와 다르게 한페이지에서 한번만 사용이 가능
+    * ex) #id name{속성명 : 속성값;}
+ */
+
+ .classEx1 {
+    color: red;
+ }
+
+ .btn{
+    font-size: 40px;
+    background-color: blue;
+    padding: 10px 30px;
+ }
+
+ .btn.create {
+    border: 10px solid green;
+ }
+
+ .modify {
+    border:10px dashed yellow;
+ }
+
+ #userName {
+    border: 1px solid white;
+    line-height: 21px;
+    font-size: 70px;
+    padding: 5px 15px;
+    color: green;
+ }

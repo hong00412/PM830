@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css에서 id와 class의 활용법</title>
+    <link rel="stylesheet" href="css/2_classid.css">
+</head>
+<body>
+    <p class="classEx1">
+        단순 지정 활용
+        
+    </p>
+    <hr>
+    <button class="btn create">
+        작성
+    </button>
+    <button class="modify">
+        수정
+        <!-- * modify class 지정후  border:10px dashed yellow; 값 넣어주기-->
+    </button>
+    <button class="btn">
+        삭제
+    </button>
+    <button>
+        확인
+    </button>
+    <button class="btn">
+        취소
+    </button>
+    <hr>
+    <form action="#">
+        <label for="userName">userName</label>
+        <input type="text" id="userName">
+        <label for="userPW">userPassWord</label>
+        <input type="password" id="userPW">
+        <label for="userEmail">userEmail</label>
+        <input type="email" id="userEmail">
+    </form>
+    <!-- 
+        * id는 한개 페이지에서 이름을 중복해서 사용 할 수 없다. html validation
+        * frontEnd 에서 이 id를 각 페이지별로 사용할 경우 아이디 자체로 css관리하는것이 편하다.
+     -->
+</body>
+</html>

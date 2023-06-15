@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hyper link</title>
+    <style>
+        html, body {
+            height: 100%;
+        }
+        #targetAnchor {
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <h1>하이퍼링크 목록</h1>
+    <p>
+        hyperlink를 이용하여 원하는 URL 및 URL내 위치로 이동 하는 법,
+        file Download Link 및 mail Link등을 배워보자.
+    </p>
+    <ul>
+        <li>
+            <a href="https://www.naver.com" target="_self">NAVER 바로가기</a>
+            <!-- 
+                * a 태그의 속성 href는 불러올 URL 및 TYPE을 설정하고,
+                * target으로 불러오는 방식을 설정할수 있는데,
+                * _self는 현재 페이지에서 바로 불러오는 방식을 말한다.
+             -->
+        </li>
+        <li>
+            <a href="https://www.google.co.kr" target="_blank">google 바로가기</a>
+            <!-- 
+                * target의 _blank 는 새탭으로 불러오는 방식을 말한다.
+             -->
+             <a href="https://www.nate.com" target="_blank">nate 바로가기</a>
+        </li>
+        <li>
+            <a href="fileName.zip">file Download</a>
+            <!-- 
+                * href에 해당 경로에 맞는 파일이름과 확장명을 적어 넣으면
+                * 파일 다운로드 기능을 활성화 할 수 있다.
+             -->
+        </li>
+        <li>
+            <a href="mailto:gysgysdl@naver.com?subject=질문있습니다.">mail 보내기</a>
+            <!-- 
+                * mailto: 로 선언된 경우 해당 메일 주소와 ?subject=제목내용
+                * (기본 영문상태지원) 으로 제목표시까지 한번에 기입 된 상태를 만들 수 있다.
+             -->
+        </li>
+        <li>
+            <a href="tel:+821074297737">걸기</a>
+            <!-- 
+                * tel: 로 선언하면 전화걸기 기능이 가능해지고
+                * mobile에서는 dialpad가 자동으로 열리며 번호 기입상태를 완성한다.
+             -->
+        </li>
+        <li>
+            <a href="#targetAnchor">바로가기</a>
+        </li>
+    </ul>
+    <div id="targetAnchor">
+        바로가기 목표지점
+    </div>
+</body>
+</html>

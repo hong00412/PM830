@@ -1,0 +1,33 @@
+html, body, .wrap {
+    height: 100%;
+}
+body, p {
+    margin: 0;
+}
+.wrap {
+    background-image: url('../images/pt.gif');
+    /* background-repeat: no-repeat;
+    background-position: 100px; */
+}
+.wrap p {
+    background-color: #0cf;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+.wrap button {
+    line-height: 50px;
+    padding: 0 40px;
+    color: white;
+    border: none;
+    /* background-image: url('../images/pt_ex.png');
+    background-repeat: repeat-x;
+    background-position: left top; */
+    background: url('../images/pt_ex.png') repeat-x left top;
+/* 
+    ? css를 줄여서 쓰는 방식을 숏핸드(shortHand)방식이라고 함
+    * background: url('') repeat-x left top;
+    *  = background-image: url(''); background-repeat:      repeat-x; background-position: left top;
+
+    * 혹시나 background-size도 숏핸드 방식으로 사용하고 싶다면 background-position 뒤에 /(슬래시) 넣어준 후 원하는 크기 넣어주면 됨
+*/
+}

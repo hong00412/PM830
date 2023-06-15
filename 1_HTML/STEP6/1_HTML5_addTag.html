@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML5에서 새로 추가 된 Tag</title>
+</head>
+<body>
+    <figure>
+        <img src="-.png" alt="">
+        <figcaption>
+            아직 정의되지 않은 이미지
+        </figcaption>
+        <!-- * figure는 이미지와 설명글을 담을수 있는 태그이고,
+             * figcaption은 이미지의 설명글을 담는 역할을 한다.
+             * 부가조건으로 유동적인 컨텐츠에 사용
+        -->
+    </figure>
+    <ul>
+        <li>
+            <figure>
+                <img src="음료이미지" alt="">
+                <figcaption>
+                    <dl>
+                        <dt>title</dt>
+                        <dd>부가적인 설명글</dd>
+                        <dd>부가적인 설명글</dd>
+                    </dl>
+                </figcaption>
+            </figure>
+        </li>
+    </ul>
+
+    <time datatime="2023-05-23T21:00:00Z">2023년 5월 23일 오후 9시</time>
+    <!-- 
+        ? 날짜, 시간 기록하는 time 마크업은
+        ? 1. datetime은 브라우저에서 인식하는 날짜 부분이다. yyyy-mm-dd 형식을 따른다.
+        ? 날짜만? 2023-05-23, 시간만? 21:00:00, Z는 그리니치 시간대를 나타내는 Zulu의 약자
+        ? 2. 브라우저에 표시될 내용
+     -->
+
+     <progress value="22" max="100"></progress>
+     <!-- 
+        ? progress는 나타내고픈 진행 상황을 실시간으로 나타날때
+        ? 사용값을 value로 설정하고 최대값을 max로 설정한다. (ie는 10이상 지원)
+      -->
+
+      <meter value="80" max="100" min="10" high="90" low="20"></meter>10%
+      <!-- 
+        ? 진행중을 progress가 담당한다면, meter는 현재 사용량이나 소모된량 등의 정지된 산출값에 적합하다.
+        ? value는 현재값, min은 최소값, max는 최대값, low는 낮다의 기준범위, high는 높다의 기준범위,
+        ? optimum은 적당하다의 기준범위
+       -->
+
+       <address>
+            <span>인천광역시 부평구 부평동 194-23 SBS아카데미컴퓨터아트학원 부평점</span>
+            <a href="https://www.incheon.sbsart.com">사이트 바로가기(https://www.incheon.sbsart.com)</a>
+            <a href="tel:+82324370111">032-437-0111</a>
+            <a href="mailto:privacy@koreaedugroup.com">이메일보내기(privacy@koreaedugroup.com)</a>
+       </address>
+       <!-- 
+            ? address tag 안에는 제작자 및 회사의 연락처 정보(메일,실제주소,전화번호)와 피드백을 
+            ? 보낼 수 있는 정보 등을 담아낼수 있다.
+            ? 만일 우편번호등만 기재해야 한다면, p를 사용하면 됨
+        -->
+
+        <details>
+            <summary>Copyright 1999-2014.</summary>
+            <p> - by Refsnes data. All rights Reserved.</p>
+            <p>All content and graphics on this web site are the property of the company Refsnes Data.</p>
+        </details>
+        <!-- 
+            ? 어떠한 키워드 (summary)의 요약 및 요소들을 넣어두고
+            ? event(클릭,오버)로 show/hide 기능이 작동되게 함.
+         -->
+
+         <ul>
+            <li>user <bdi>hrefs</bdi>: 60 points</li>
+            <li>user <bdi>hrefs</bdi>: 80 points</li>
+            <li>user <bdi>hrefs</bdi>: 90 points</li>
+         </ul>
+         <!-- ? bdi는 자신의 외부 텍스트와 다른 포맷으로 규정되는 텍스트를 분리하는데에 사용한다.
+              ? (ex> 다국어 지원)
+        -->
+
+        <form oninput="x.value=parseInt(a.value) + parseInt(b.value)">
+            0<input type="range" id="a" value="50">100
+            +
+            <input type="number" id="b" value="50">
+            =
+            <output id="x" for="a b"></output>
+
+        </form>
+        <!-- 
+            ? form에 지정된 스크립트 연산을 지정 input(id)들로 수행하여,
+            ? 결과값을 산출해내는 식이다.
+            ? range는 값을 마우스를 이용해 입력할 수 있고, number는 직접입력 및 up,down버튼을
+            ? 이용해 입력할수있다.
+         -->
+
+
+</body>
+</html>

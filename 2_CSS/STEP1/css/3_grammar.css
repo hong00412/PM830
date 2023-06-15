@@ -1,0 +1,71 @@
+body {
+    margin: 0;
+    font-size: 20px;
+}
+
+ul,ol{
+    padding: 0;
+}
+
+ul li{
+    font-size: 15px;
+    color: tomato;
+    font-weight: bold;
+}
+
+/* 
+    todo. img 태그에 border:3px solid green; 값 지정해보기
+    todo. ol li 만 잡아서 font-size:20px; 값 지정하기
+    todo. dl dt 와 dl dd 는 font-size:35px; 값 지정하기
+    todo. dl dt 한테는 background-color:red; 값 지정하기
+    todo. dl dd 한테는 background-color:yellow; 값 지정하기
+    todo. figure 안에 img 태그 잡아서 width:50px; height:50px; 값지정하기
+    todo. figcaption dl dt 에는 color:skyblue; 값 지정하기
+    todo. figcaption dl dd 에는 font-size:50px; 값 지정하기
+ */
+
+ li {
+    background-color: yellow;
+ }
+
+ img {
+    border: 3px solid green;
+ }
+
+ ol li {
+    font-size: 20px;
+ }
+
+ dl dt,dl dd {
+    font-size: 35px;
+ }
+
+ dl dt {
+    background-color: red;
+ }
+
+ dl dd {
+    background-color: yellow;
+ }
+
+ section ul li figure img {
+    width:50px; height:50px;
+ }
+
+ section ul li figure figcaption dl dt{
+    color: skyblue;
+ }
+
+ section ul li figure figcaption dl dd {
+    font-size: 50px;
+ }
+
+ /* 
+    todo. test 라는 이름을 가진 class 를 만들기
+    todo. class 속성값은 font-size:100px;
+    todo. dl dt dd 에게만 class 적용하기
+ */
+
+ .test {
+    font-size: 100px;
+ }

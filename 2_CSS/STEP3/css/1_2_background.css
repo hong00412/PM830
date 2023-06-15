@@ -1,0 +1,49 @@
+body {
+    margin: 0;
+    background-image: url('../images/image.jfif');
+    /* background-size: 100%; */
+    /* background-size: 200px; */
+    /* background-size: cover; */
+    background-size: 300px;
+    /* background-size: 150px 500px; */
+
+/* 
+    * background-image는 대상의 배경 설정
+    * background-size는 bg의 크기 설정
+     ? -> background-size: cover;는 이미지가 화면에 꽉 차게 나옴 - 대상의 공간을 우선시 함(화면 채우기)
+     ? -> background-size: contain은 이미지의 크기를 우선시 함(이미지가 화면에 보여지는 것을 기준으로 함)
+    * background-size는 '150px 200px'처럼 공백으로 구분하면 width(가로)와 height(세로) 순서로 설정할 수 있음
+*/
+
+    background-repeat: no-repeat;
+    /* background-repeat: repeat-x; */
+    /* background-repeat: repeat-y; */
+/* 
+    * background-repeat은 기본 옵션이 'repeat', 수직 반복은 repeat-y, 수평 반복은 repeat-x.
+    * 반복하지 않는 것은 no-repeat
+ */
+
+    /* background-position: 0px 300px; */
+    background-position: center;
+
+/* 
+    *background-position은 x축 y축으로 구분 하는데 하나만 적을 경우에는 x축, y축 동일 적용(ex_background-position: center;는 x축, y축 모두 가운데에 놓겠다는 뜻)
+    * left, center, right는 x축 움직임
+    * top, center, bottom은 y축 움직임
+    * %, px등의 단위도 적용 가능
+
+    ? -> background-position: left bottom; - 왼쪽 하단에 위치
+    ? -> background-position: right top; - 오른쪽 상단에 위치
+*/
+
+    background-attachment: fixed;
+    
+/* 
+    * background-attachment: fixed;는 background를 viewport에 고정시킴(아무리 스크롤을 내려도 고정)
+*/
+}
+
+div {
+    height: 2000px;
+}
+

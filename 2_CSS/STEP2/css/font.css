@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500&family=Oswald:wght@400;700&display=swap');
+
+/*  * fonts.google 메뉴
+    *   -> Serif: 꺽새가 있음
+    *      Sans Serif: 일반적으로 사용할 수 있는 텍스트, 정직하고 고딕같음(가독성에 포커스, 본문에 적합)
+    *   	            본문에 사용하는 폰트에 weight가 다양함
+    *       Display: 화려하고 개성있음(p태그에 쓰면 가독성 엄청 떨어짐 예쁜건 맨 마지막으로.. 디자인에 포커스)
+    *       handwriting: 캘리그라피
+    *       Monospace: 웹에서 사용 빈도가 가장 낮고 Serif와 Sans Serif의 사이..?(타자기, 활자 같은 방식)
+*/
+
+h1 {
+    font-family: 'Oswald'; font-size: 72px; font-weight: 700;
+}
+h2 {
+    font-family: 'Noto Serif KR'; font-size: 56px; font-weight: 500;
+}
+p.letter {
+    letter-spacing: 10px;
+}
+/* * letter-spacing: 자간 설정(글자 간 간격) 속성이며 높게 설정하지 않음
+    ? -> -@px로 사용하면 자간을 좁힐 수도 있음
+    ? 자간: 글자 하나하나 기준
+    ? 적정 범주: -1px ~ 3px정도
+    ? 간혹가다 자간이 넓어보이는 font에서 -1px로 사용하면 좋음    
+*/
+
+p.word {
+    word-spacing: 10px;
+}
+/* 
+    * word-spacing: 단어간격(space bar기준)
+    ? -> 대체적으로 글자가 특정 공간에서 떨어져야 했을 때 간혹 사용
+*/
+p[class^='w_'] {
+    border: 1px solid red; width: 150px;
+}
+
+p.w_normal {
+    white-space: normal; line-height: 21px;
+}
+/* * white-space: normal은 태그가 가지고 있는 공간 만큼만 text가 차지 */
+/* * line-height는 문장 간의 간격
+    ? -> font-size의 1.2배나 +6px를 넣어주면 가독성이 좋음
+    ? -> 단 font-size가 30px보 초과일 경우 대부분 제목으로 쓰기 때문에 line-height가 상관 없음 */
+p.w_nowrap {
+    white-space: nowrap; text-overflow: ellipsis; overflow-x: hidden;
+}
+/* 
+    * white-space: nowrap은 글자가 공간에 구애받지 않고 넘어감
+    ? -> 보통 '...(말 줄임)'과 많이 사용됨
+    * text-overflow: ellipsis; 을 사용하면 말줄임표를 사용할 수 있음
+    ? -> 단, overflow: hidden; 속성을 같이 사용해주어야 함
+ */
+
+ /* 
+    ! overflow
+        ? 1. overflow-x : 가로축 숨김
+        ? 2. overflow-y : 세로축 숨김
+        ? 3. overflow: 가로, 세로축 모두 숨김
+  */
+  
+.v_alignTest span {
+    vertical-align: 20%;
+}
+/* * span -> display: inline;
+   ? -> vertical-align은 inline 속성에 넣으면 적용 되지 않음
+   ?    규격 자체가 안에 있는 content 만큼만 가지기 때문에 여유 공간이 없어 정렬이 되지 않음
+   ?    그 옆에 규격을 가지고 있는 inline-block에 적용하면 가능
+ */
+.v_alignTest img {
+    vertical-align: middle;
+}
+/* * img -> display: inline-block; */
+
+/*
+    * baseline: 문자의 밑선에 맞추어 정렬
+    * middle: 문자의 중앙을 기준으로 해서 정렬
+    * sub : 아래첨자
+    * super : 위 첨자
+    * text-top:문자의 윗선을 밑선으로 해서 정렬
+    * top: 위쪽에 정렬
+    * bottom : 아래쪽 정렬
+    * % : 퍼센트로 정렬 위치를 지정
+*/	
+
+p.t_indent {
+    font-size: 40px;
+    text-indent: -9999px;
+    /* background-image: url('https://via.placeholder.com/150 '); */
+}
+/* * text-indent: 들여쓰기(-9999px로 사용할 경우 텍스트를 없앨 수 있음) */
+
+.test {
+    background: url('https://via.placeholder.com/150x50?text=imgbackround') no-repeat left top;
+    width: 150px; line-height: 50px; border: none;
+    font-size: 12px;
+    text-indent: -9999px;
+}
+a {
+    display: block;
+}
+a.t_deco_N {
+    text-decoration: none;
+    text-transform: none;
+    color: #090;
+}
+a.t_deco_U {
+    text-decoration: underline;
+    text-transform: lowercase;
+    color: #0cf;
+}
+a.t_deco_O {
+    text-decoration: overline;
+    text-transform: capitalize;
+    color: #96c;
+    margin-top: 20px;
+}
+a.t_deco_T {
+    text-decoration: line-through;
+    text-transform: uppercase;
+    color: #f63;
+}
+
+/* 
+    * text-transform: lowercase는 모두 소문자로 바꿔주는 것
+    * text-transform: capitalize는 단어 첫번째가 대문자로 바뀜(★ 많이 익숙해야 함)
+    * text-transform: uppercase는 모두 대문자로 바꿔주는 것
+    * text-decoration: overline은 글자의 위에 줄이 생김
+    * text-decoration: unnderline은 글자의 밑에 줄이 생김
+    * text-decoration: line-through는 글자의 가운데에 줄이 생김
+ */
+p.DR_ltr {
+    direction: ltr;
+}
+p.DR_rtl {
+    direction: rtl;
+}
+
+/* 
+    * direction: ltr; -> 컨텐츠가 왼쪽부터 순서대로 나옴(left to right)
+    * direction: rtl; -> 컨텐츠가 오른쪽부터 역방향으로 나옴(right to left)
+*/
