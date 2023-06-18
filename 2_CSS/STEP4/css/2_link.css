@@ -1,0 +1,19 @@
+a {
+    text-decoration: none;
+    font-size: 40px;
+    display: inline-block;
+}
+
+a:link {color: black;}
+/* * :link는 한 번도 방문하지 않은 상태 */
+
+a:visited{color: darkred;}
+/* * :visited는 한 번이상 방문한 상태 */
+
+a:hover{color: pink;}
+/* 
+    * :hover는 마우스를 올려 놓은 상태
+    ! 굉장히 많이 쓰임
+ */
+a:active {color: darkviolet}
+/* * :active는 버튼을 누르고 있을 때의 상태 */

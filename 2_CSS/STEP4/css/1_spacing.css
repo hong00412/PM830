@@ -1,0 +1,63 @@
+body {
+    margin: 0;
+}
+.firstDiv {
+    /* margin: 10px; */
+    /* margin-top: 10px; ! body 입장에서 잘못된 케이스 */
+    /* margin-right: 10px; ! body 입장에서 잘못된 케이스 */
+    margin-bottom: 10px;
+    /* margin-left: 10px; ! body 입장에서 잘못된 케이스 */
+    background-color: #555;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.firstDiv article {
+    background-color: #039; color: white;
+}
+
+.secondDiv {
+    background-color: #ddd;
+    margin: 10px 15px;
+}
+/* * margin: 10px 15px; = 상, 하 10px / 좌, 우 15px */
+.secondDiv article {
+    background-color: #930;
+    margin: 10px;
+}
+/* 
+    * article에 적용한 margin-bottom이 상쇄된 걸 확인할 수 있음
+    * 부모 div의 margin에 자식인 article margin이 상쇄되기 때문에 여기서는 공간을 잡으려면
+    *   div에 padding을 적용하는게 바람직함
+*/
+
+.centerDiv {
+    width: 300px; border: 1px solid #33f;
+    text-align: center;
+    margin: 0 auto;
+    /* margin-left: auto; */
+    padding: 10px;
+}
+.centerDiv article {
+    background-color: #f33;
+    color: white;
+    margin: 10px;
+}
+/* 
+    * margin: 0 auto;를 사용하게 되면 auto가 가운데로 보내고 싶은 공간의 width,
+    *   그 width를 제외한 나머지 공간을 계산해서 자동으로 가운데로 보내줌
+
+    * margin과 margin이 서로 만나면 상쇄되지만 padding과 margin이 만나면 충돌되어 값이 합산됨
+*/
+
+.paddingDiv {
+    width: 100px;
+    padding: 10px 20px;
+    border: 3px solid #333;
+    background-color: #ff3;
+    
+    margin: 50px;
+}
+/* 
+    * box-sizing: border-box;를 설정하면 padding, border의 사이즈는 더 이상 width에 가산되지 않는다.
+    * 다시 되돌리고 싶을 때는 box-sizing: content-box;를 사용하면 됨
+*/
