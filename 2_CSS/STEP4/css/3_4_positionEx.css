@@ -1,0 +1,33 @@
+body {
+    margin: 0;
+    padding-top: 200px;
+}
+header {
+    width: 100%; height: 200px; z-index: 1;
+    background-color: pink;
+    position: fixed; left: 0; top: 0;
+}
+section {
+    position: relative; height: 1000px;
+    background-color: darkslateblue;
+}
+section aside,
+section article {
+    position: absolute; height: 100%;
+}
+section aside {
+    background-color: aquamarine; width: 20%;
+    left: 0; top: 0;
+}
+section article {
+    background-color: sandybrown;
+    width: 70%;
+    /* right: 0; */
+    left: 30%;
+}
+footer {
+    background-color: gray;
+    font-size: 30px;
+    padding: 20px;
+
+}

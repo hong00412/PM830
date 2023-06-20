@@ -1,0 +1,35 @@
+body {
+    margin: 0;
+}
+.wrap {
+    background-color: gray;
+}
+.wrap .exam1 img {
+    float: left; margin: 0 15px 0 0;
+}
+.wrap .exam1 p {
+    font-size: 25px; line-height: 32px;
+    margin: 0;
+}
+/* 
+    * float의 첫번째 문제: float를 적용한 태그들의 height가 맞지 않으면 width를 밑에서 뚫고 나가버림
+*/
+
+.wrap .exam2 {
+    background-color: rosybrown; 
+    /* overflow: hidden; */
+}
+.wrap .exam2:after {
+    content: ''; display: block; clear: both;
+}
+/* 
+    ? after 캔슬러
+    * content: ''; - empty string(빈 공간(글자))을 만들어 태그의 가장 마지막 부분을 잡음
+    * display: block; - block화 시켜서 점이었던 빈 공간을 width: 100%로 만들어 라인으로 바꿈
+    * clear: both - 양 옆을 clear로 float를 해제 시켜 밑의 컨텐츠들이 위로 올라오지 않게 함
+*/
+
+.wrap .exam2 div {
+    float: right; background-color: salmon;
+    width: 100px; height: 100px;
+}

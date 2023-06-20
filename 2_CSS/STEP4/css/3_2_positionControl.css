@@ -34,3 +34,21 @@ body {
     *   -> display: block 속성의 태그여도 absolute를 적용하는 순간 width를 상실하기 떄문에
     *      width를 꼭 규정해야 함 (display: inline 속성과 같아짐)
 */
+.position_F {
+    position: fixed;
+    width: 80px; height: 80px;
+    /* top: 0; left: 0; */
+
+    top: 200px; left: 200px;
+    background-color: #9f9;
+}
+/* 
+    * 3. fixed
+    *   -> 무조건 브라우저(화면) 좌측 상단을 기준으로 움직임
+    *   -> relative를 부모로 삼지 않고 독립적인 형태로 움직임
+    *   -> 브라우저의 scroll 영향도 받지 않기 때문에 아무리 스크롤을 내려도 화면에서 움직이지 않음
+    *   -> 보통 페이지 위쪽에 고정되어 있는 nav나 페이지 사이드에 있는 버튼들에 많이 쓰임
+    *   -> absolute와 마찬가지로 width와 height를 부여하지 않으면 규격 상실
+
+    ? position: static;을 사용하면 기존 객체 속성으로 돌아감
+*/
