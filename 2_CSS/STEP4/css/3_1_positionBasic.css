@@ -1,0 +1,69 @@
+/* 
+    ! display
+    ? 1. block - 기본 width: 100% / 서로 같은 줄에 존재할 수 없음
+    ?          - width(너비)를 줄인다고 해도 옆으로 붙지 않고 아래로 붙음
+    ?          -> div, section, article, p, nav, h, aside, footer, header ....
+
+    ? 2. inline-block - block처럼 width를 가질 수 있고 나란히 있으면 옆에 붙음]
+    ?                 -> inline-block은 태그 사이에 강제 마진이 생김(html에서의 띄어쓰기나 줄바꿈)
+    ?                 -> so, 사이의 여백이 있는 한 줄 형태나 화면이 줄어들거나 늘어날 때
+    ?                    알아서 떨어지거나 올라가는 형태를 만들 때 사용하면 좋음
+    ?                 -> 내가 원할 때만 떨어져야 하는 상황이라면 사용하면 안됨
+    ?                 -> nav 버튼들 정렬할 때 좋음
+
+    ? 3. inline - width를 자체적으로 가질 수 없음(안의 content의 너비만큼만 가짐)
+    ?           -> span, strong, b, em, mark....
+    
+    * li의 기본 display 속성은 line-item.
+    *   -> 목록 개념이라서 list-item 속성을 지켜야 할 경우 불릿을 없앨 때 list-style: none을 사용
+    *       그런게 아니라면 li에 display: block;을 사용해서 불릿 제거
+*/
+
+body {
+    width: 600px;
+    margin: 0 auto;
+    position: relative;
+}
+
+#wrap {
+    width: 300px; height: 200px; margin: 0 auto;
+    background-color: #999;
+    position: relative;
+    /* overflow: hidden; */
+    overflow: scroll;
+}
+#wrap div {
+    width: 150px; height: 150px;
+    position: absolute;
+}
+#wrap .redBox {
+    background-color: red;
+    left: 10px; top: 10px;
+    z-index: 100;
+}
+#wrap .greenBox {
+    background-color: green;
+    left: 50px; top: 50px;
+    z-index: 10;
+}
+#wrap .blueBox {
+    background-color: blue;
+    left: 90px; top: 90px;
+    z-index: 1;
+}
+
+/* 
+    * 좌표의 기준이 될 부모의 객체에 position: relative; 를 선언
+    *  relative를 기준으로 움직일 자식 객체에게 position: absolute를 선언
+    *   -> 이렇게 하면 부모객체의 위치를 기준으로 자식객체가 움직이게 됨
+    *   -> absolute는 좌표를 입력하지 않아도 위에 떠다님
+
+    ? position에서 relative가 absolute의 부모, 좌표 역할을 하지만 종속시킬 수는 없음
+    ?   -> But relative를 준 태그에 overflow: hidden;을 넣어주면 뚫고 나가지 못함
+    ?   -> 만약 잘리는 부분을 scroll로 처리하고 싶다면 relative 태그에 overflow: scroll; 넣기
+
+    * z-index를 사용했을 때 위에 올라와있는 태그의 우선순위를 변경할 수 잇음
+    *   -> 값이 클 수록 위에 올라옴
+    *   -> 1부터 9999까지 마음대로 적을 수 있으나 헷갈릴 수 있기 때문에
+    *       1 / 10 / 100 / 1000 같이 본인만의 기준을 세워두는게 좋음
+*/

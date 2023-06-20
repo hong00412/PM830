@@ -1,0 +1,36 @@
+body {
+    height: 2000px;
+}
+.position_A {
+    position: absolute;
+    background-color: #fc0;
+    left: 150px; top: 150px;
+    width: 150px;
+    height: 150px;
+}
+
+.position_R {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    margin: 0 auto;
+    background-color: #0f0;
+}
+.position_R .position_A2 {
+    position: absolute;
+    left: 50px; top: 50px;
+    background-color: pink;
+    width: 50px; height: 50px;
+}
+/* 
+    * 1. relative
+    *   -> 그냥 적용하면 position이 들어갔는지 모르게 그냥 블럭처럼 똑같이 되어 있지만
+    *       좌표를 적는 순간부터 현재 자신이 위치한 공간을 기준으로 좌표값대로 움직임
+    !       (단, 이 용도로는 사용하지 않음)
+    *       -> 다른 컨텐츠 위를 덮치는게 가능해지기 때문에 absolute처럼 홈페이지가 복잡해짐
+    *       -> so, absolute의 기준점 역할로만 사용하는게 좋음
+
+    * 2. absolute
+    *   -> display: block 속성의 태그여도 absolute를 적용하는 순간 width를 상실하기 떄문에
+    *      width를 꼭 규정해야 함 (display: inline 속성과 같아짐)
+*/
