@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>selector(기존에 아는 선택자들)</title>
+    <link rel="stylesheet" href="css/1_selector.css">
+</head>
+<body>
+    <div class="tagSelector">
+        <h1>h1 tag를 지목하여 css 적용</h1>
+        <p>p tag를 지목하여 css 적용</p>
+        <span>span tag를 지목하여 css 적용</span>
+    </div>
+    <div class="idSelector">
+        <p id="paragraph1">
+            Paragraph 1번 아이디를 지목하여 css 적용
+        </p>
+        <p id="paragraph2">
+            Paragraph 2번 아이디를 지목하여 css 적용
+        </p>
+        <p id="paragraph3">
+            Paragraph 3번 아이디를 지목하여 css 적용
+        </p>
+    </div>
+    <div class="classSelector">
+        <p class="f_size">
+            f_size class로 font-size만 변경
+        </p>
+        <p class="f_size f_weight">
+            f_size class로 font size 변경, f_weight class로 굵기 변경
+        </p>
+        <p class="f_size f_weight f_color">
+            f_size class로 font size 변경, f_weight class로 굵기 변경, f_color class로 font color 변경
+        </p>
+    </div>
+    <div class="attrSelector">
+        <fieldset>
+            <legend>attribute Selector</legend>
+            <ul>
+                <li>
+                    <label for="nameField">이름</label>
+                    <input type="text" id="nameField">
+                </li>
+                <li>
+                    <label for="passwordField">비밀번호</label>
+                    <input type="password" id="passwordField">
+                </li>
+                <li>
+                    <label for="passwordCheck">비밀번호 확인</label>
+                    <input type="password" id="passwordCheck">
+                </li>
+                <li>
+                    <label for="pro">등급선택</label>
+                    <input type="radio" name="group" id="pro">
+                    <label for="pro">프로</label>
+                    <input type="radio" name="group" id="ama">
+                    <label for="ama">아마추어</label>
+                    <input type="radio" name="group" id="sen">
+                    <label for="sen">시니어</label>
+                    <input type="radio" name="group" id="jun">
+                    <label for="jun">주니어</label>
+                </li>
+            </ul>
+        </fieldset>
+    </div>
+    <div class="directSelector">
+        <h1>
+            이 부분은 directSelector의 직계 h1
+        </h1>
+        <div class="indirect">
+            <h1>
+                이 부분은 directSelector의 직계 indirect 안의 h1
+            </h1>
+        </div>
+        <span>
+            이 부분은 directSelector의 직계 span
+            <span>
+                이 부분은 directSelector의 직계 span 안의 span
+            </span>
+        </span>
+    </div>
+    <div class="stringAttrSelector">
+        <img src="https://via.placeholder.com/150.png" alt="undifined">
+        <img src="https://via.placeholder.com/150.gif" alt="undifined">
+        <img src="https://via.placeholder.com/150.jpg" alt="undifined">
+        <p class="border_red">class 구분1</p>
+        <p class="border_blue">class 구분2</p>
+        <p class="border_green">class 구분3</p>
+    </div>
+    <div class="sameSelector">
+        <h1>header - 1</h1>
+        <h2>header - 2</h2>
+        <h2>header - 2</h2>
+        <h3>header - 3</h3>
+        <h2>header - 2</h2>
+        <h2>header - 2</h2>
+    </div>
+</body>
+</html>
