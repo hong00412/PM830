@@ -133,3 +133,104 @@ body {
     * '~'은 뒤에 있는 모든 tag를 잡는 것
     *   -> div ~ p = div 뒤에 있는 모든 p를 잡는 것
 */
+
+.activeSelector h1 {
+    font-size: 12px; color: black;
+}
+.activeSelector h1:hover {
+    font-size: 24px; color: darkgoldenrod; cursor: pointer;
+}
+/* 
+    * cursor: pointer는 커서가 손가락 모양의 커서로 바뀜(버튼이라는 인식)
+*/
+
+.statusSelector input[type='checkbox'] + label {
+    display: inline-block; vertical-align: middle;
+    height: 25px; overflow-y: hidden;
+    transition-duration: 0.75s;
+}
+.statusSelector input[type='checkbox']:checked + label {
+    /* height: 0px; */
+    color: red; font-size: 20px;
+}
+.statusSelector input[type='text']:enabled {
+    background-color: black; color: white;
+}
+.statusSelector input[type='text']:disabled {
+    background-color: deeppink; color: white;
+}
+.statusSelector input[type='text']::placeholder {
+    color: white;
+}
+.normalSelector ul:after {
+    content: ''; display: block; clear: both; visibility: hidden;
+}
+.normalSelector ul li {
+    float: left; margin: 0; padding: 15px;
+    list-style: none; border: 1px solid black;
+}
+.normalSelector ul li:first-child {
+    border-radius: 30px 0 0 30px;
+}
+.normalSelector ul li:last-child {
+    border-radius: 0 30px 30px 0;
+}
+.normalSelector ul li:nth-child(odd) {
+    background-color: darkblue; color: white;
+}
+.normalSelector ul li:nth-child(even) {
+    background-color: lightpink;
+}
+
+.shapeSelector :last-child {
+    color: red;
+}
+.shapeSelector h2:nth-child(5) {
+    color: #30f;
+}
+.shapeSelector h2:nth-of-type(2) {
+    color: #30f;
+}
+.shapeSelector h3:nth-of-type(2) {
+    color: #0f6;
+}
+/* 
+    * nth-child는 선택된 tag의 부모 tag 기준으로 잡음
+    * nth-of-type은 선택된 tag의 형제 tag 중 동일한 tag 순서 기준으로 잡음
+*/
+
+.textSelector h1:first-letter {
+    font-size: 100px; color: #096;
+}
+/* 첫 글자만 선택 */
+.textSelector p:first-line {
+    color: #090; text-decoration: underline;
+    font-size: 24px;
+}
+/* 첫 줄만 선택 */
+
+.backandfrontSelector p{
+    counter-increment: rint;
+}
+.backandfrontSelector p:before {
+    content: counter(rint) ".";
+}
+/* 
+    * counter-increment 속성에 내가 임의로 counter name을 정해준 뒤
+    *   before 선택자 content에 counter() 함수를 사용하여 counter name을 넣고
+    *   한 칸 띄고 "" 안에 내가 원하는 기호를 적으면 카운터 뒤에 기호를 마음대로 넣을 수 있음
+*/
+
+.backandfrontSelector p:after {
+    content: '-' attr(data-page) "page";
+    font-weight: bold; color: deeppink;
+}
+
+.notSelector input:not([type="text"]) {
+    background-color: red;
+}
+/* 
+    * class 선택자로 뺄 때 -> .notSelector input:not(.class)
+    * id 선택자로 뺄 때 -> .notSelector input:not(#id) 
+    * nth 속성 선택자로 뺄 때 -> .notSelector input:not(:first-child) 
+*/
