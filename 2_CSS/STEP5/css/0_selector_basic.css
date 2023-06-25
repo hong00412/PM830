@@ -1,0 +1,31 @@
+* {
+    margin: 0; padding: 0;
+}
+body {
+    padding: 24px;
+}
+h2 {
+    color: red;
+    margin-bottom: 6px;
+}
+ul {
+    padding-left: 30px;
+}
+ul li {
+    display: block;
+    margin-bottom: 5px;
+}
+ul li strong:before {
+    content: '→ '
+}
+ul li p {
+    padding-left: 20px;
+}
+ul li p span {
+    display: block;
+    width: 700px;
+    margin-top: 5px;
+    padding: 10px;
+    border: 1px solid #000;
+    line-height: 22px;
+}
