@@ -1,0 +1,32 @@
+body {
+    margin: 0;
+}
+article:after {
+    content: ''; display: block; clear: both;
+}
+article:not(:last-of-type) {
+    margin-bottom: 30px;
+}
+article > *:first-child {
+    background-color: gray; width: 40%; font-size: 200px;
+    line-height: 140px; color: white;
+}
+/* 
+    * font-size보다 line-height를 적게 주면 font가 밑으로 빠짐
+    *   color를 white로 줘서 배경에 녹아들기 때문에 숫자 밑단이 안 보이게끔 나옴
+*/
+article:nth-of-type(odd) > *:first-child  {
+    float: right; margin: 0 0 0 20px; text-align: right;
+}
+article:nth-of-type(even) > *:first-child {
+    float: left; margin: 0 20px 0 0;
+}
+article p > *:first-child {
+    color: #09f;
+}
+article p mark {
+    background-color: transparent;
+}
+article p > *:not(strong) {
+    text-decoration: underline;
+}

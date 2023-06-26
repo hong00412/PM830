@@ -1,0 +1,78 @@
+html, body {
+    height: 100;
+}
+body {
+    margin: 0; background-color: black;
+}
+body > div:first-of-type {
+    width: 50%; height: 50%;
+    position: absolute; left: 25%; top: 25%;
+    background-color: #262626;
+    min-height: 295px;
+}
+/* 
+    * min-height: 높이가 지정한 크기 미만로 줄어들지 말라는 뜻
+    * max-height: 높이가 지정한 크기 초과로 늘어나지 말라는 뜻
+    *   -> min-width, max-width 도 너비로 같은 의미
+*/
+
+body > div nav {
+    margin-bottom: 25px;
+}
+body > div nav ul {
+    margin: 0; padding: 0;
+}
+body > div nav ul:after {
+    content: ''; display: block; clear: both;
+}
+body > div nav ul li {
+    width: 25%; float: left; display: block;
+    background-color: #3b3b3b;
+}
+body > div nav ul li a {
+    display: block; line-height: 30px; font-size: 12px;
+    text-decoration: none; color: #ea0552;
+    text-align: center; text-transform: capitalize;
+}
+body > div nav ul li.active a,
+body > div nav ul li:hover a {
+    color: white;
+    background-color: #ea0552;
+}
+body > div h1 {
+    font-size: 14px; color: white; text-align: center;
+    text-transform: capitalize; margin-bottom: 25px;
+}
+body > div fieldset {
+    border: none; padding: 0; width: 90%; margin: 0 auto;
+}
+body > div fieldset ul {
+    padding: 0; list-style: none;
+}
+body > div fieldset ul li:first-child {
+    margin-bottom: 25px;
+}
+body > div fieldset ul li:after {
+    content: ''; display: block; clear: both;
+}
+body > div fieldset ul li * {
+    line-height: 36px;
+    float: left;
+}
+body > div fieldset ul li label {
+    width: 15%; display: block; text-align: center;
+    background-color: #ea0552; color: white;
+    font-size: 12px; 
+}
+body > div fieldset ul li input {
+    width: 80%; display: block; border: none;
+    padding: 0 2.5%;
+}
+body > div fieldset + input {
+    width: 90%; display: block; margin: 0 auto;
+    background-color: #3b3b3b; border: none; color: #ea0552;
+    line-height: 30px;
+}
+body > div fieldset + input:hover {
+    background-color: #ea0552; color: white; cursor: pointer;
+}
