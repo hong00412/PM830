@@ -1,0 +1,24 @@
+body {
+    max-width: 960px; margin: 0 auto;
+}
+form fieldset {
+    border: 1px solid #05f; padding: 15px 20px 25px;
+}
+form fieldset:not(:last-of-type) {
+    margin-bottom: 25px;
+}
+form fieldset label {
+    display: inline-block;
+}
+form fieldset input {
+    vertical-align: middle;
+}
+form fieldset textarea {
+    display: block; width: 99%; border: 1px solid #50f;
+    padding: 10px 1%; box-sizing: border-box;
+    height: 150px; margin: 25px auto 0; resize: none;
+    transition: 0.75s;
+}
+form fieldset input[type='checkbox']:checked + textarea {
+    height: 0; padding: 0 1%;
+}
