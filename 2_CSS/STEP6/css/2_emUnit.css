@@ -1,0 +1,47 @@
+html {
+    font-size: 16px;
+}
+body {
+    margin: 0;
+}
+/* 
+    * 해당 container에 따로 font-size를 지정하지 않으면 부모의 font-size를 상속 받음
+    *   -> 이 상속받는 개념을 'inherit'이라고 함
+*/
+.emLayout {
+    width: 75em; margin: 0 auto;
+    background-color: rebeccapurple;
+}
+.emLayout header {
+    font-size: 14px; padding: 0.625em;
+    background-color: skyblue;
+}
+.emLayout section {
+    font-size: 14px;
+}
+.emLayout section:after {
+    content: ''; display: block; clear: both;
+}
+.emLayout section * {
+    float: left; height: 40em;
+}
+.emLayout section aside {
+    font-size: 1em; width: 15em; background-color: gold;
+}
+.emLayout section article:first-of-type {
+    font-size: 1em; width: 40em; background-color: pink;
+}
+.emLayout section .sub_article {
+    font-size: 1em; width: 30.714em; background-color: lightgreen;
+}
+.emLayout footer {
+    background-color: lightsteelblue; line-height: 3em;
+    text-align: center;
+}
+/* 
+    * em은 rem과 다르게 해당 container에 부여한 font-size를 기준을 따라감
+    *    -> ex_section에 font-size: 13px를 줬을 때 1em = 13px이 됨
+    ! 하지만 해당 container에 font-size를 주지 않으면 부모 태그를 추적해 font-size를 찾아
+    !   그 수치를 기준으로 1em을 잡음
+    !   이 추적하는 과정에서 복잡해지고 유지보수가 어려워질 수 있어 잘 사용하지 않음
+*/
