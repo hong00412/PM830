@@ -1,6 +1,9 @@
 * {
     margin: 0; padding: 0;
 }
+body {
+    padding-bottom: 300px;
+}
 div {
     margin-bottom: 30px;
 }
@@ -31,3 +34,76 @@ div {
 .visibilityProperty span:nth-child(2) {
     visibility: hidden; height: 500px;
 }
+.visibilityProperty span:nth-child(2):hover {
+    visibility: visible;
+}
+/* 
+    * visibility: hidden은 본인 공간은 유지하면서 content만 안 보이게 하는 속성
+*/
+.visibilityProperty table {
+    border: 1px solid black;
+    visibility: collapse;
+}
+.visibilityProperty input[type='checkbox']:checked ~ table {
+    visibility: visible;
+}
+.opacityProperty ul:after {
+    content: ''; display: block; visibility: hidden; clear: both;
+}
+.opacityProperty ul li {
+    float: left; display: block; width: 33%; background-color: black;
+    position: relative;
+}
+.opacityProperty ul li:not(:first-child) {
+    margin-left: 0.5%;
+}
+.opacityProperty ul li figure img {
+    width: 100%; opacity: 0.3; transition-duration: 1s;
+}
+.opacityProperty ul li:hover figure img {
+    opacity: 1;
+}
+/* 
+    * opacity는 불투명도를 의미
+    *   -> 1을 지정할 경우 불투명도가 100%인 상태이기 떄문에 본인 색상을 그대로 유지
+    *   -> 0.3 = 30%로 불투명도가 낮아졌기 때문에 본인보다 아래 깔려있는 content가 비침
+    *   -> 숫자가 낮아질수록 투명해짐
+*/
+.opacityProperty ul li figure figcaption {
+    position: absolute; width: 33.33%; height: 33.33%;
+    left: 33.33%; top: 33.33%; background-color: rgba(255, 255, 255, 0.3);
+    padding-top: 10%; box-sizing: border-box;
+}
+/* 
+    * opacity는 rgba()라는 함수를 이용해서 배경의 투명도도 지정할 수 있음
+    *    -> rgb에 본인이 원하는 색상, a에 불투명도 %를 지정
+*/
+.opacityProperty ul li figure figcaption dl {
+    text-align: center;
+}
+.opacityProperty ul li figure figcaption dl dt {
+    font-size: 14px; font-weight: bold; margin-bottom: 20px;
+}
+.opacityProperty ul li figure figcaption dl dd {
+    font-size: 12px; color: #666;
+}
+
+.shadowProperty h1 {
+    text-shadow: 5px 10px 10px rgba(0, 0, 0, 0.7);
+/* * text-shadow: x축 y축 번짐의정도 그림자색상 */
+    margin-bottom: 50px;
+}
+.shadowProperty p {
+    width: 300px; height: 300px; border: 3px solid #f00;
+    margin-bottom: 30px;
+}
+.shadowProperty p:first-of-type {
+    box-shadow: 8px 10px 2px rgba(0, 0, 0, 0.5);
+}
+.shadowProperty p:last-of-type {
+    box-shadow: inset 8px 10px 2px rgba(0, 0, 0, 0.5), 10px 10px 15px rgba(0, 0, 0, 0.7);
+}
+/*
+    * box-shadow도 text-shadow와 같이 같은 순서로 넣어주면 그림자를 만들어낼 수 있음
+    *   -> text-shadow와는 다르게 ,를 기준으로 다중 그림자를 넣어줄 수 있음
+ */

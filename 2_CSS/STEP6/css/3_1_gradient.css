@@ -1,0 +1,21 @@
+.redG {
+    background: linear-gradient(135deg, #9b1f1f 0%, #d13327 40%, #c92520 60%, #ea7e7e 100%);
+/* * background: linear-gradient(deg(각도), 1color 1locaPin(범위), 2color 2locaPin, ...) */
+}
+.greenG {
+    background: linear-gradient(to bottom, darkgreen 0%, lightgreen 100%);
+    /* * linear-gradient 각도에 'to bottom'을 입력하면 위에서 아래로 가는 Gradient를 만듦 */
+}
+.blueG {
+    background: linear-gradient(to right, #1e5799 0%, #7db9e8 100%);
+}
+
+.yellowG {
+    width: 500px; line-height: 500px; border-radius: 250px;
+    border: 1px solid #000; text-align: center;
+    background: radial-gradient(ellipse at center, #fefcea 0%, #f1da36 100%);
+}
+/* 
+    * 원형 gradient를 넣고 싶을 때는 background: radial-gradient()
+    *   -> ellipse at center로 지정하면 가운데서부터 밖으로 퍼지는 gradient를 만들 수 있음
+*/
