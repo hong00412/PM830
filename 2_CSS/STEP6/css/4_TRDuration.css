@@ -1,0 +1,62 @@
+body {
+    margin: 0;
+}
+.durationEx1 {
+    width: 100px; height: 100px; background-color: #ff0;
+    transition-duration: 0.75s;
+
+}
+/* 
+    * transition-duration은 동작이 일어난 후의 css에 넣는게 아니라 원래 content가 가지고 있는 css에 적용
+    * 원래 색상 값을 적용할 때 진수 값(#000)으로 사용해야 했는데 이제 'red' 같이 색상 이름을 적어도 적용이 됨
+*/
+.durationEx1:hover {
+    width: 200px; height: 200px;
+}
+.durationEx1:active {
+    background-color: red;
+}
+
+.durationEx2 {
+    width: 200px; height: 200px; font-size: 16px;
+    background-color: #ff6a00; padding: 30px;
+    transition-duration: 2s;
+}
+/* 
+    * font-size, line-height는 줄어들 수 잇는 만큼 줄어들다가 최소값 밑으로는 갑자기 사라짐
+    *   -> 이런 오류로 인해 사용하기 어렵고 1px씩 줄여가면서 값을 찾아야 하는 단점이 있음
+*/
+.durationEx2:hover {
+    padding: 10px; font-size: 12px;
+}
+.durationEx2:active {
+    padding: 30px; font-size: 16px;
+}
+
+.durationEx3 {
+    position: relative; height: 23px; background-color: #808080;
+    margin-bottom: 50px;
+}
+.durationEx3 .moveSpan {
+    display: block;
+    background-color: #000; width: 3%; height: 23px;
+    position: absolute; left: 0; top: 0;
+    transition-duration: 3s;
+}
+.durationEx3:hover .moveSpan {
+    left: 97%;
+}
+.durationEx4 {
+    width: 50%; height: 250px;
+    border-width: 10px;
+    border-style: solid;
+    border-color: #ff0000 #ff7700 #ffff00 #00ff00;
+    font-size: 30px;
+    font-weight: bold;
+    transition-duration: 2s;
+}
+.durationEx4:hover {
+    border-color: #00f200 #0000ff #000055 #9900ff;
+    margin-left: 25%;
+    color: #0099ff;
+}
