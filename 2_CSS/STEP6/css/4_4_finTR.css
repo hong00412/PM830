@@ -1,0 +1,72 @@
+html, body {
+    height: 100%;
+}
+body {
+    width: 90%; margin: 0 auto;
+}
+aside {
+    width: 50%; height: 80%; float: left;
+    padding-top: 14%; box-sizing: border-box;
+}
+a {
+    text-decoration: none;
+}
+p strong {
+    display: block;
+}
+p {
+    font-size: 12px;
+}
+/* ? global.css */
+
+aside:first-of-type {
+    padding-right: 5%;
+}
+aside:first-of-type footer {
+    color: #6800ff;
+}
+/* ? leftAside fin */
+
+aside:last-of-type ul {
+    margin: 0; padding: 0;
+}
+aside:last-of-type ul li {
+    padding: 10px 5%; text-align: right;
+    display: block; font-size: 12px;
+    transition-duration: 1s; overflow-y: hidden;
+}
+aside:last-of-type ul li:hover {
+    padding: 5%; cursor: pointer;
+}
+aside:last-of-type ul li a {
+    color: #fff;
+}
+aside:last-of-type ul li a:before {
+    content: '+';
+}
+aside:last-of-type ul li:hover a {
+    color: #000;
+}
+aside:last-of-type ul li:hover a:before {
+    content: '>';
+}
+
+aside:last-of-type ul li:nth-child(1) { background-color: #ff5f5f; }
+aside:last-of-type ul li:nth-child(2) { background-color: #ffaf6b; }
+aside:last-of-type ul li:nth-child(3) { background-color: #e7ed66; }
+aside:last-of-type ul li:nth-child(4) { background-color: #30b052; }
+aside:last-of-type ul li:nth-child(5) { background-color: #2a7aff; }
+aside:last-of-type ul li:nth-child(6) { background-color: #3333aa; }
+aside:last-of-type ul li:nth-child(7) { background-color: #6800ff; }
+
+aside:last-of-type ul li p {
+    width: 80%; float: left;
+    height: 0; opacity: 0;
+    transition-property: opacity, height;
+    transition-duration: 2s, 1s;
+    transition-timing-function: ease-out;
+}
+
+aside:last-of-type ul li:hover p {
+    opacity: 1; height: 220px;
+}

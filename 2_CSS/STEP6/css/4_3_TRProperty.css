@@ -1,0 +1,26 @@
+body {
+    margin: 0;
+}
+.property {
+    width: 610px; margin: 0 auto; border: 3px solid #3a00b6;
+}
+.property span {
+    display: block; width: 10px; height: 50px;
+    background-color: #0cf; margin: 5px;
+    transition-property: background-color, width;
+    transition-duration: 1s, 5s;
+}
+/* 
+    * transition-property는 duration, timing-function을 썼을 때 어떤 걸 변화시킬 것인가를 적는 것, property만 바라보게 됨
+    *   -> so, 다른 속성들보다 위에 적는게 좋음
+
+    * transition도 숏핸드 방식으로 사용할 수 있음
+    *   -> transition: property duration timing-function; 순으로 작성
+    *       (ex_transition: all 0.75s ease-in;)
+*/
+
+.property:hover span:nth-child(1) { background-color: #f00; width: 100px; }
+.property:hover span:nth-child(2) { background-color: #fa6600; width: 300px; }
+.property:hover span:nth-child(3) { background-color: #ff0; width: 400px; }
+.property:hover span:nth-child(4) { background-color: #0f0; width: 200px; }
+.property:hover span:nth-child(5) { background-color: #00f; width: 500px; }
