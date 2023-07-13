@@ -13,7 +13,7 @@ div span {
     * 회전을 할 때 기준점을 어디로 둘건지(회전 중심축) 지정 -> default는 center
     * left, top, right, bottom, % 로 이동시킬 수 있음.
 */
-
+ 
 div:first-of-type span {
     background-color: red; transform: rotate(10deg);
 }
