@@ -1,0 +1,63 @@
+* {
+    margin: 0; padding: 0;
+}
+body {
+    position: relative;
+}
+.circle {
+    position: absolute;
+    width: 200px; height: 200px; border-radius: 100px;
+    background: linear-gradient(135deg, #b360cb 0%, #6555ff 100%);
+    text-align: center;
+    animation-name: moveCircle;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: linear;
+}
+/* 
+    * animation-name: 지정한 keyframes의 이름을 해당 코드에 동일하게 넣어서 적용
+    * animation-interation-count: infinite; - 무한반복
+    *   -> infinite 대신 숫자를 입력하면 그 숫자 만큼만 반복하고 애니메이션 마무리
+
+    * animation-direction: normal (0부터 100까지 한번 재생하고 끝)
+    * animation-direction: alternate(0부터 100, 그리고 100에서 0까지 반복한다는 뜻)
+    * animation-direction: alternate-reverse (반대로 100부터 0, 0에서 100으로 반복 -> 무한반복에서는 안씀)
+*/
+.circle h1 {
+    line-height: 200px;
+}
+/* 
+    * .circle에 height를 줘서 텍스트가 상단에 위치하고 있는데
+    *   h1에 line-height를 주어 상단에서 중앙으로 오게끔 적용
+*/
+
+.circle:hover {
+    animation-play-state: paused;
+}
+/* 
+    * animation-play-state: paused : 중지
+    * animation-play-state: running : 재생
+*/
+
+@keyframes moveCircle {
+    from{
+        left: 0;
+        transform: rotate(0deg);
+    }
+    50% {
+        left: 500px;
+    }
+    to {
+        left: 500px;
+        transform: rotate(360deg);
+        /* left: 0; */
+    }
+}
+/* 
+    * @keyframes(set) 에서 moveCircle이 animation-name을 가져다 쓸 수 있는 이름이 됨
+    * from = 0% / to = 100% 이고 그 안에 프레임을 더 넣고 싶으면 사이에 %로 지정하면 됨(1% ~ 99% 모두 적용 가능)
+    * 프레임 안에 지정하는 건 움직여줄 속성만 입력해주면 됨 (position: absolute; 같은건 입력 하지 않아도 됨)
+    ? @keyframes에는 움직임을 어떻게 줄 것인지에 대한거만 설정하고 시간이나 그 외적인 설정은 
+    ?   해당 애니메이션이 설정된 코드(content)의 css에서 해야 함
+*/

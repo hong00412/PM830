@@ -1,0 +1,68 @@
+div {
+    width: 200px; height: 200px;
+    border: 5px solid black;
+    margin: 0 auto;
+}
+div span {
+    width: 200px; height: 200px; display: flex;
+    align-items: center;
+    transform-origin: left top;
+}
+/* 
+    ? transform-origin
+    * 회전을 할 때 기준점을 어디로 둘건지(회전 중심축) 지정 -> default는 center
+    * left, top, right, bottom, % 로 이동시킬 수 있음.
+*/
+
+div:first-of-type span {
+    background-color: red; transform: rotate(10deg);
+}
+div:nth-of-type(2) span {
+    background-color: #ff9200; transform: rotate(10deg) translateX(100px);
+}
+/* 
+    * transform은 여러가지 함수를 불러와 사용할 수 있어 중복으로 사용하지 않게 해야 함
+    * translateX(100px)은 X좌표 선상에서 100px만큼 이동하겠다는 의미이나 rotate가 먼저 적용이 되었기 때문에
+    *   10'로 기울어진 상태에서 그 각도값으로 이동함(방향축이 변한 상태)
+    *       -> 정확한 수평 상태의 X좌표로 움직이고 싶다면 translateX를 rotate보다 먼저 적어주어야 함
+*/
+
+div:nth-of-type(3) span {
+    background-color: yellow;
+    transform: rotate(10deg) translateX(100px) translateY(50px);
+}
+
+div:nth-of-type(4) span {
+    background-color: green;
+    transform: rotate(10deg) translate(100px, 50px) skewX(10deg);
+}
+/* 
+    * translate(100px, 50px) = translateX(100px) translateY(50px);
+*/
+div:nth-of-type(5) span {
+    background-color: blue; transform: rotate(10deg) translate(100px, 50px) skew(10deg, 10deg);
+    color: white;
+}
+/* 
+    * translate와 skew는 X축 Y축을 shorthand로 사용할 수 있지만
+    *   X, Y의 값이 같다고 해서 통합해서 적으면 안됨
+    *   -> ex_ skew(10deg) -> X / skew(10deg, 10deg) -> O
+*/
+
+div:last-of-type span {
+    background-color: lightpink;
+    transform: rotate(10deg) translate(100px, 50px) skew(10deg, 10deg) scale(1.2, 1.2);
+}
+
+/* 
+    ! rotate: 회전
+    ! translate: 위치 이동
+    ! skew: 뒤틀기 (포토샵에서 Ctrl+T 상태에서 Ctrl 누르고 꼭지점 움직였을 때의 효과와 같음)
+    ! scale: 확대, 축소 (1 = 100%)
+    !   -> font-size도 영향을 받기 때문에 font가 있는 요소에는 쓰지 않거나 약간만 쓰는게 좋음
+*/
+
+/* 
+    ? position:absolute의 left, top 좌표는 relative(부모)의 box 기준으로 움직이지만
+    ? translateX, Y의 좌표는 본인 box 기준으로 움직임
+*/

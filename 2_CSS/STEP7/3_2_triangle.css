@@ -1,0 +1,55 @@
+body {
+    width: 200px; margin: 200px auto;
+}
+/* 
+    * animation 효과가 들어가는 부모한테 animation이 작동될 공간을 제한시킴
+    * 지금은 단순 삼각형만 만들기 때문에 body에 주는 거지만 실제로는 2중첩으로 해서 부모한테 주어야 함
+*/
+div {
+    width: 200px; position: relative;
+    animation-name: rotate3D;
+    animation-duration: 10s;
+    animation-timing-function: ease;
+    animation-iteration-count: infinite;
+    transform-style: preserve-3d;
+}
+/* 
+    * transform-style: preserve-3d를 선언하지 않으면 3d로 볼 수 없음
+    *   -> rotate로 면을 돌린다고 해도 납작하게 눌려 보이고 꺾여보이지는 않음
+*/
+
+@keyframes rotate3D {
+    from {
+        transform: rotate3d(0,0,0,0deg);
+        /* transform: rotateY(0deg); */
+    }
+    to {
+        transform: rotate3d(1,1,1,360deg);
+        /* transform: rotateY(360deg); */
+    }
+}
+
+div span {
+    width: 200px; height: 100px; display: block;
+    position: absolute; left: 0; top: 0;
+    opacity: 0.3;
+}
+div span:nth-of-type(1) {
+    background-color: red; transform: rotateX(0deg);
+}
+div span:nth-of-type(2) {
+    background-color: green; transform: rotateY(60deg);
+    transform-origin: left top;
+}
+div span:nth-of-type(3) {
+    background-color: blue; transform: rotateY(-60deg);
+    transform-origin: right top;
+}
+/* 
+    ? 삼각형 만들기
+    * 1. position: absolute; left: 0; top: 0; 을 적용해 3장의 종이를 한 가운데로 모으기
+    * 2. 2번째 종이에 transform-origin으로 좌측 상단을 기준으로 만든 후 60도의 각도를 준다.
+    * 3. 3번째 종이에는 반대방향의 동일 각도를 주어야 한다(-60deg)
+    *   -> 중심점 역시 반대에 위치해야 하므로 transform-origin을 right top으로 적용
+    ! 첫번째 종이는 밑면이라서 각도가 필요 없다.
+*/
