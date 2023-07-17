@@ -1,0 +1,82 @@
+html, body {
+    height: 100%;
+}
+body {
+    margin: 0 auto; width: 1000px; background-color: black;
+}
+img {
+    border: none;
+}
+/* * tag 초기화 및 base setting */
+
+section {
+    position: relative; width: 100%; height: 100%;
+    perspective: 1500px;
+}
+/* 
+    ? section
+    ! perspective를 주고, moveMent를 absolute로 띄우기 위함
+*/
+
+section .moveMent {
+    position: absolute; left: 50%; top: 20%;
+    transform-style: preserve-3d;
+    animation-name: rotater;
+    animation-duration: 15s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+/* 
+    ? moveMent
+    ! 회전목마의 열이 작동하는 박스(통돌이)
+*/
+
+@keyframes rotater {
+    from {
+        transform: rotateY(0deg);
+    }
+    to {
+        transform: rotateY(360deg);
+    }
+}
+section .moveMent .pic {
+    position: absolute; left: 0; top: 0;
+    backface-visibility: hidden;
+    margin-left: -107px;
+}
+
+section .moveMent .pic:nth-child(1) { transform: rotateY(0deg) translateZ(-370px); }
+section .moveMent .pic:nth-child(2) { transform: rotateY(36deg) translateZ(-370px); }
+section .moveMent .pic:nth-child(3) { transform: rotateY(72deg) translateZ(-370px); }
+section .moveMent .pic:nth-child(4) { transform: rotateY(108deg) translateZ(-370px); }
+section .moveMent .pic:nth-child(5) { transform: rotateY(144deg) translateZ(-370px); }
+section .moveMent .pic:nth-child(6) { transform: rotateY(180deg) translateZ(-370px); }
+section .moveMent .pic:nth-child(7) { transform: rotateY(216deg) translateZ(-370px); }
+section .moveMent .pic:nth-child(8) { transform: rotateY(252deg) translateZ(-370px); }
+section .moveMent .pic:nth-child(9) { transform: rotateY(288deg) translateZ(-370px); }
+section .moveMent .pic:nth-child(10) { transform: rotateY(324deg) translateZ(-370px); }
+
+/* 
+    * rotateY로 각각 cell들이 바라보는 방향을 360도 회전하여 설정한 후
+    * translateZ를 일정한 값으로 주어 바라보는 방향대로 움직이기 때문에 원통을 만들 수 있음
+
+    * translateZ로 깊이를 설정하는데 perspective가 활성화 되어야 식별이 가능
+    * translateZ를 적용하지 않으면 원통으로 돌아가는 모양이 아니라 가운데가 겹쳐져 별모양이 됨
+
+    * backface-visibility를 hidden으로 주어 뒷모습이 보이지 않게 적용했기 때문에
+    * 오목한 반쪽만 보이게 되고 만약 translateZ를 + 값으로 주게 되면 볼록한 형태로 변함
+*/
+
+section .moveMent .pic .cell {
+    width: 215px; height: 121px; margin-bottom: 20px;
+    transition-duration: 0.5s;
+}
+section .moveMent .pic .cell:hover {
+    transform: scale(1.2);
+}
+section .moveMent .pic .cell img {
+    width: 100%; opacity: 0.5;
+}
+section .moveMent .pic .cell:hover img {
+    opacity: 1;
+}

@@ -1,0 +1,16 @@
+.flexContainer {
+    margin: 10px; padding: 15px;
+    border-radius: 23px; background-color: #a4a4a4;
+    display: flex;
+}
+/* 
+    * 기본
+    ! 1. 부모 요소는 flex 혹은 inline-flex로 지정되어야 한다.
+    ? flex = 부모요소가 block인 경우, inline-flex = 부모요소가 inline일 경우
+    * 그러면 자동으로 이하 자식요소는 모두 flexItem이 된다.
+*/
+.flexItem {
+    margin: 10px; padding: 20px; color: white;
+    text-align: center; background-color: slateblue;
+    border-radius: 25px;
+}
