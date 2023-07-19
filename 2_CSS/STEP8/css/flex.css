@@ -14,3 +14,133 @@
     text-align: center; background-color: slateblue;
     border-radius: 25px;
 }
+.flexContainer.direction {
+    flex-direction: column-reverse;
+}
+/* 
+    * flex-direction:
+    * -> 이 속성은 flexContainer의 주축(main axis) 방향을 설정한다.
+    * -> row(ltr), row-reverse(rtl), column(Top to Bottom), column-reverse(Bottom to Top)
+*/
+.flexContainer.wrap {
+    flex-wrap: wrap-reverse;
+}
+.flexContainer.wrap .flexItem {
+    width: 500px;
+}
+/* 
+    * flex-wrap: 
+    * -> 이 속성은 flexContainer의 width보다 flexITem들의 width 합계가 더 큰 경우, 한 줄로 표현할 것인지 여러줄로 표현할 것인지를 지정한다.
+    * -> nowrap(개행불허. 1행에 모두 배치 (default값) & flexItem width 합계가 더 크면 자동으로 축소)
+    * -> wrap (width 초과시 개행(밑으로 떨어짐))
+    * -> wrap-reverse (개행하지만 역배치)
+*/
+
+.flexContainer.flow {
+    flex-flow: column nowrap;
+}
+/* 
+    * flex-flow: <flex-direction> | <flex-wrap>;
+*/
+
+.flexContainer.justify {
+    padding: 0;
+    justify-content: space-between;
+}
+/* 
+    * justify-content :
+    *  -> flex container의 main axis를 기준으로 flexItem을 수평 정렬한다.
+
+    ? flex-start: flexItem을 좌측 기준으로 정렬
+    ? flex-end: flexItem을 우측 기준으로 정렬
+    ? center: flexItem을 가운데 기준으로 정렬
+    ? space-around: 모든 flexItem 사이의 간격을 동일하게 정렬하고 좌우 공간은 자투리 공간으로 남김)
+    ? space-evenly: 모든 flexItem 사이 간격과 시작공간 및 끝공간(부모와 맞닿아 있는 부분)까지 모두 균등하게 배분
+    ? space-between: flexItem중 처음은 좌측 끝, 마지막은 우측 끝에 붙이고 나머지는 동일한 간격으로 정렬
+*/
+
+.flexContainer.alignContent {
+    flex-wrap: wrap; height: 400px;
+    padding: 0;
+    align-content: stretch;
+}
+/* 
+    * align-content:
+    ! justify-content와 유사
+    * -> flex container의 cross axis를 기준으로 flexItem을 수직 정렬한다.
+
+    ? stretch: flex container 높이 만큼 꽉차게 item들의 height가 균등하게 늘어남
+    ? flex-start: flexItem 행 간격 없이 위에서 아래로 정렬
+    ? flex-end: flexItem 행 간격 없이 아래에서 위로 정렬
+    ? center: flex container의 중앙을 기준으로 정렬
+    ? space-around: 모든 flexItem 사이의 간격을 동일하게 정렬하고 상하 공간은 자투리 공간으로 남김)
+    ? space-evenly: 모든 flexItem 사이 간격과 시작공간 및 끝공간(부모와 맞닿아 있는 부분)까지 모두 균등하게 배분
+    ? space-between: flexItem중 처음은 상단 끝, 마지막은 하단 끝에 붙이고 나머지는 동일한 간격으로 정렬
+*/
+
+.flexContainer.alignItems {
+    height: 200px;
+    align-items: baseline;
+}
+.flexContainer.alignItems .flexItem:first-of-type {
+    line-height: 50px;
+}
+.flexContainer.alignItems .flexItem:nth-of-type(2) {
+    height: 100px;
+}
+/* 
+    * align-items: 
+    * -> flexItem을 flexContainer의 수직 방향으로 정렬
+    ? baseline: 안의 컨텐츠(text) 밑단 기준으로 정렬
+*/
+
+.flexContainer.orderItem .flexItem.order1 {
+    order: 1;
+}
+.flexContainer.orderItem .flexItem.order2 {
+    order: 2;
+}
+.flexContainer.orderItem .flexItem.order3 {
+    order: -1;
+}
+.flexContainer.orderItem .flexItem.order4 {
+    order: -2;
+}
+
+.flexContainer.flexShortHand {
+    margin: 0; padding: 0;
+}
+.flexContainer.flexShortHand .flexItem {
+    margin: 0; width: 150px;
+}
+.flexContainer.flexShortHand .flexItem:first-child {
+    flex-grow: 2;
+    /* flex-shrink: 2; */
+    /* flex-basis: 10px; */
+}
+.flexContainer.flexShortHand .flexItem:nth-child(2) {
+    flex-grow: 1;
+    /* flex-shrink: 1; */
+    /* flex-basis: 10px; */
+}
+.flexContainer.flexShortHand .flexItem {
+    width: 10px;
+    flex-basis: 100px;
+}
+/* 
+    ? grow
+    * item의 확장비를 정하고 기본값은 0으로 설정된다.
+    * 원래는 item들이 빈공간을 채우지 않지만 grow를 주게 되면 부모 공간을 꽉 채우게 됨
+    * 음수는 허용하지 않고 양수를 입력하였을 때 grow의 합산 너비 중 입력된 비율 만큼 가질 수 있다.
+*/
+/* 
+    ? shrink
+    * 브라우저가 줄어들 때 item의 수축비를 정하고 기본값은 1로 설정된다.
+    * 음수는 허용되지 않고, 양수를 입력 하였을 때 총 shrink의 합산 너비 중 입력된 비율 만큼 수축될 수 있다.
+*/
+/* 
+    ? basis
+    * item의 너비를 정한다.(column일 경우엔 높이)
+    * 기본값은 auto이며 다양한 단위 (%, px, rem, em ...)를 사용할 수 있다.
+    * width와 중복될 경우 basis가 우선시 되기 때문에 중복해서 사용할 필요 없음
+*/

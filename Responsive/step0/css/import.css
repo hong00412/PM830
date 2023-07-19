@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap');
+@import url('pc.css') screen;
+@import url('print.css') print;
+
+/* 
+    * screen(출력을 빛으로 하는 코드), print(종이로 출력되는 코드) = 장치 식별코드
+*/
+/* 
+    ? 장치적 반응형
+    * 화면단 반응형보다 월등히 좋지만 모든 장치의 기기 이름과 ip 이름을 조합해서 어떤 장치로 접속하냐에 따라 달라져야 하고 모든 기기가 다 있어야 하기 때문에 작업이 어려움
+
+    ? 화면적 반응형
+    * browser의 resolution만 있으면 가능(width X height)
+    * height는 만들다 보면 자동으로 크기에 따라 늘어나기 때문에 width를 중점으로 생각하면서 만듦
+*/
