@@ -1,0 +1,70 @@
+
+@media screen and (max-width: 767px) {
+    html {
+        background-color: palegreen; color: forestgreen; font-weight: normal;
+    }
+    h1 {
+        font-size: 1.5rem; line-height: 3rem; text-align: center;
+    }
+    p {
+        font-size: 1rem; text-align: center; line-height: 1.5rem;
+    }
+}
+/* 
+    * mobile Device - resolution 767px Lower
+*/
+
+
+@media screen and (min-width: 768px) and (max-width: 1279px) and (orientation: landscape) {
+    html {
+        background-color: greenyellow; color: black; font-weight: bold;
+    }
+    h1 {
+        font-size: 2rem; line-height: 3rem; text-align: left;
+    }
+    p {
+        font-size: 1rem; text-align: left; line-height: 1.5rem;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1279px) and (orientation: portrait) {
+    html {
+        background-color: green; color: white; font-weight: bold;
+    }
+    h1 {
+        font-size: 3rem; line-height: 4rem; text-align: right;
+    }
+    p {
+        font-size: 2rem; text-align: right; line-height: 2.5rem;
+    }
+}
+/* 
+    * tablet Device - resolution 768px higher 1279px Lower
+    *   -> tablet 사용자 해상도가 768 이상, 1280 미만일 때 이 코드가 실행
+
+    ? orientation: portrait를 적용하면 기기를 원래 상태로 봤을 때는 적용 되는데 옆으로(가로로) 돌리게 되면 적용이 안됨 (스마트폰도 동일)
+    ?   -> 가로로 봤을 때의 속성은 orientation: landscape 적용
+*/
+
+@media screen and (min-width: 1280px) {
+    html {
+        background-color: blue; color: white; font-weight: bold;
+    }
+    h1 {
+        font-size: 2rem; line-height: 3rem;
+    }
+    p {
+        font-size: 1rem; text-align: right; line-height: 1.5rem;
+    }
+}
+/* 
+    * desktop Device - resolution 1280px higher
+*/
+
+/* 
+    * 문제는 항상 좁은 공간에서 생기기 때문에 가장 작은 사이즈 환경에서 확인하고 코드를 완성시켜 나가야 함
+    ! pc는 1280px로 맞춰놓고, 태블릿은 768px, 모바일은 현재 가장 화면이 작은 Galaxy Fold 환경에서 작업
+    !  -> 모니터가 1920px이라고 해서 전체화면으로 놓고 하면 나중에 줄였을 때 문제가 발생할 수 있음
+
+    ? 반응형을 작업할 때는 코드 치는 순서를 pc -> tablet -> mobile 순으로 하고 코드 배열 순서는 역순으로 mobile -> tablet -> pc로 놓기
+*/
