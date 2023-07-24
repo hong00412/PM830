@@ -1,0 +1,53 @@
+header > div nav ul li a,
+header > div > ul li p,
+footer > div *,
+#about figcaption p,
+section.videoArea h2,
+section.expArea ul li > *,
+section.teamArea ul li figure figcaption dl,
+section.teamArea ul + p,
+section.worksArea h2 a,
+section.talkArea p > *,
+section.contactArea form fieldset input:not([type="submit"]),
+section.contactArea form fieldset textarea {
+    font-family: 'Roboto';
+}
+
+header > div > ul li h2,
+#about figcaption h2,
+section.expArea > *:not(ul),
+section.teamArea h2,
+section.teamArea > p:first-of-type,
+section.worksArea h2,
+section.talkArea p,
+section.contactArea form fieldset legend,
+section.contactArea > div h3 { 
+    font-family: 'Playfair Display';
+}
+/* 
+    * 위에서 작성한 방식은 Grouping Code
+    *  -> 상반된 코드는 Moduling Code 
+*/
+a {
+    text-decoration: none;
+}
+.btn_more {
+    font-family: "Hammersmith One";
+    font-weight: 400; font-size: 16px;
+    color: #00e0d0; border: 1px solid #00e0d0;
+    text-align: center; background-color: transparent;
+    padding: 15px 0;
+}
+section[class *= 'Area'] hr {
+    width: 5%; min-width: 50px;
+    border-top: 2px solid rgba(255, 255, 255, 0.2);
+}
+/* All Using Part */
+
+@media screen and (min-width: 1280px) {
+    header {
+        background: url('../images/bg_01.png') no-repeat left top;
+        background-size: cover;
+        padding: 15px 0 70px;
+    }
+}
