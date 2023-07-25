@@ -36,7 +36,8 @@ a {
     font-weight: 400; font-size: 16px;
     color: #00e0d0; border: 1px solid #00e0d0;
     text-align: center; background-color: transparent;
-    padding: 15px 0;
+    padding: 15px 1.48%;
+    display: block;
 }
 section[class *= 'Area'] hr {
     width: 5%; min-width: 50px;
@@ -50,4 +51,75 @@ section[class *= 'Area'] hr {
         background-size: cover;
         padding: 15px 0 70px;
     }
+    header > div {
+        max-width: 940px; margin: 0 auto;
+        position: relative;
+    }
+    header > div h1 {
+        max-width: 128px;
+        background: url('../images/logo.png') no-repeat left top;
+    }
+    header > div h1 a {
+        display: block;
+        height: 50px;
+        text-indent: -9999px;
+    }
+    header > div nav {
+        position: absolute; top: 0; right: 0;
+        width: calc(100% - 130px); text-align: right;
+    }
+    header > div nav ul li {
+        display: inline-block;
+    }
+    header > div nav ul li:not(:first-child) {
+        margin-left: 2.78%;
+    }
+    header > div nav ul li a {
+        display: block; line-height: 50px;
+        font-size: 13px; font-weight: 900; color: #fff;
+    }
+    header > div nav ul li a.active,
+    header > div nav ul li a:hover {
+        color: #00e0d0;
+    }
+    /* header nav Fin */
+
+    header > div > ul {
+        margin-bottom: 125px;
+    }
+    header > div > ul li {
+        padding-top: 165px; display: block;
+    }
+    header > div > ul li h2 {
+        font-size: 32px; color: white; font-weight: 900;
+        text-align: center;
+        padding-bottom: 22px;
+        background: url('../images/bd_01.png') no-repeat center bottom;
+        margin-bottom: 30px; 
+    }
+    header > div > ul li p {
+        font-size: 14px; color: white; font-weight: 300;
+        line-height: 24px; text-align: center;
+        max-width: 780px; margin: 0 auto;
+        margin-bottom: 50px;
+    }
+    header > div > ul li a.btn_more {
+        max-width: 120px; margin: 0 auto;
+    }
+    header > div > ol {
+        text-align: center;
+    }
+    header > div > ol li {
+        display: inline-block;
+    }
+    header > div > ol li a {
+        display: block; width: 10px; height: 10px;
+        border-radius: 5px; border: 1px solid rgba(255,255,255,0.8);
+        box-sizing: border-box; text-indent: -9999px;
+    }
+    header > div > ol li a.active,
+    header > div > ol li a:hover {
+        background-color: #00e0d0; border-color: #00e0d0;
+    }
+    /* header Fin */
 }
