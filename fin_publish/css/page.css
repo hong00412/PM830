@@ -67,28 +67,34 @@
         color: #413d4b; margin-bottom: 10px;
     }
     section.expArea p {
-        font-size: 14px; font-weight: 700;
+        font-size: 14px;
+        /* font-weight: 700; */
+        font-weight: 400;
         color: #413d4b; margin-bottom: 15px;
     }
     section.expArea hr {
         margin: 0 auto 45px;
     }
 
-    section.expArea ul:after {
+    /* section.expArea ul:after {
         content: ''; display: block; clear: both;
-    }
+    } */
     section.expArea ul li {
-        width: 33.33%; display: block; float: left;
+        /* width: 33.33%;  */
+        /* float: left; */
+        display: block; 
         box-sizing: border-box;
         padding: 120px 2% 40px;
         background-repeat: no-repeat;
         background-position: center 30px;
     }
 
-    section.expArea ul li:not(:nth-child(3n+1)) {
+    /* section.expArea ul li:not(:nth-child(3n+1)) {
         border-left: 1px solid rgba(0,0,0,0.2);
-    }
-    section.expArea ul li:not(:nth-child(-n+3)) {
+    } */
+
+    /* section.expArea ul li:not(:nth-child(-n+3)) { */
+    section.expArea ul li:not(:first-child){
         border-top: 1px solid rgba(0,0,0,0.2);
     }
     section.expArea ul li:nth-child(1) {
@@ -122,7 +128,7 @@
     section.teamArea {
         background: url('../images/bg_03.png') no-repeat left top;
         background-size: cover;
-        padding: 70px 0;
+        padding: 70px 3%;
         color: white;
         text-align: center;
     }
@@ -144,23 +150,29 @@
     }
     section.teamArea ul {
         /* max-width: 940px; */
-        max-width: 728px;
+        /* max-width: 728px; */
+        max-width: 600px;
         margin: 0 auto 70px;
     }
-    section.teamArea ul:after {
+    /* section.teamArea ul:after {
         content: ''; display: block; clear: both;
-    }
+    } */
     section.teamArea ul li {
-        width: 23.5%; float: left; display: block;
+        /* width: 23.5%; float: left; */
+        display: block;
     }
-    section.teamArea ul li:not(:first-child) {
+    /* section.teamArea ul li:not(:first-child) {
         margin-left: 2%;
+    } */
+    section.teamArea ul li:not(:last-child) {
+        margin-bottom: 20px;
     }
     section.teamArea ul li figure {
         /* padding-top: 230px; */
         padding-top: 179px;
         background: url('https://via.placeholder.com/220x230') no-repeat center top;
-        background-size: contain;
+        /* background-size: contain; */
+        background-size: cover;
     }
     section.teamArea ul li figure figcaption dl {
         border: 1px solid rgba(255,255,255,0.5);
@@ -181,25 +193,40 @@
         padding: 70px 0;
     }
     section.worksArea h2 {
-        font-size: 22px; font-weight: 700; color: #413d4b;
+        /* font-size: 22px; */
+        font-size: 18px;
+        font-weight: 700; color: #413d4b;
         /* max-width: 940px; */
-        max-width: 728px;
-        margin: 0 auto 70px;
+        /* max-width: 728px; */
+        max-width: 600px;
+        padding: 0 3%;
+        /* margin: 0 auto 70px; */
+        margin: 0 auto 50px;
         position: relative;
     }
     section.worksArea h2 a {
-        position: absolute; right: 0; top: 5px;
-        font-size: 14px; font-weight: 300;
+        position: absolute;
+        /* right: 0; */
+        right: 3%;
+        /* top: 5px; */
+        top: 3px;
+        /* font-size: 14px;  */
+        font-size: 12px;
+        font-weight: 300;
         color: #413d4b;
     }
     section.worksArea ul {
         margin-bottom: 70px;
     }
-    section.worksArea ul:after {
+    /* section.worksArea ul:after {
         content: ''; display: block; clear: both;
-    }
+    } */
     section.worksArea ul li {
-        width: 16.66%; float: left; display: block; line-height: 0;
+        /* width: 16.66%; float: left; */
+        display: block; line-height: 0;
+    }
+    section.worksArea ul li:not(last-child) {
+        margin-bottom: 25px;
     }
     section.worksArea ul li a {
         display: block;
@@ -221,8 +248,12 @@
         display: none;
     }
     section.talkArea p {
-        max-width: 728px; margin: 0 auto 45px;
-        background: url('../images/quote.png') no-repeat center top; padding-top: 70px;
+        /* max-width: 728px; */
+        max-width: 600px;
+        /* padding-top: 70px; */
+        padding: 70px 3% 0;
+        margin: 0 auto 45px;
+        background: url('../images/quote.png') no-repeat center top;
         font-size: 16px; font-weight: 400; line-height: 26px;
         color: white;
     }
@@ -237,7 +268,9 @@
         font-size: 13px; font-weight: 300;
     }
     section.talkArea div {
-        max-width: 940px; margin: 0 auto;
+        /* max-width: 940px; */
+        max-width: 600px;
+        margin: 0 auto;
     }
     section.talkArea div > * {
         display: inline-block; vertical-align: middle;
@@ -246,7 +279,9 @@
         font-size: 22px; color: rgba(255,255,255,0.5);
     }
     section.talkArea div ul {
-        width: 33%; max-width: 310px;
+        /* width: 33%; */
+        width: 80%;
+        max-width: 310px;
     }
     section.talkArea div ul:after {
         content: ''; display: block; clear: both;
@@ -277,18 +312,22 @@
     }
     /* talkArea Fin */
 
-    section.contactArea:after {
+    /* section.contactArea:after {
         content: ''; display: block; clear: both;
-    }
+    } */
     section.contactArea h2 {
         display: none;
     }
     section.contactArea form fieldset,
     section.contactArea div {
-        float: left; display: block;
+        /* float: left; */
+        display: block;
     }
-    section.contactArea form fieldset {
+    /* section.contactArea form fieldset {
         width: 50%;
+    } */
+    section.contactArea form fieldset {
+        margin-bottom: 50px;
     }
     section.contactArea form fieldset legend,
     section.contactArea div h3 {
@@ -308,13 +347,14 @@
     }
     section.contactArea form fieldset .btn_more {
         cursor: pointer; min-width: 120px;
+        margin-left: auto;
     }
-    section.contactArea div {
+    /* section.contactArea div { */
         /* width: 40%; */
-        width: 45%;
+        /* width: 45%; */
         /* margin-left: 10%; */
-        margin-left: 5%;
-    }
+        /* margin-left: 5%; */
+    /* } */
     section.contactArea ul:after {
         content: ''; display: block; clear: both;
     }
