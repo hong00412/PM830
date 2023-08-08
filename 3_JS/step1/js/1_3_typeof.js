@@ -45,3 +45,16 @@ function check1() {
     var cold = true;
     console.log(typeof(cold) + ' 추우신가요? ' + cold);
 }
+
+function check2() {
+    var test;
+    console.log(typeof(test) + ' = ' + test);
+}
+//  * 변수를 선언은 하였으나 초기화(값을 부여)하지 않아 안에 아무것도 담겨 있지 않기 때문에 typeof()도 undefined로 나옴
+
+function check3() {
+    var obj = null;
+    console.log(typeof(obj));
+}
+// * null의 자료형은 object임
+// *   -> obj = null;은 변수에 객체를 담을 예정이니 null로 초기화 해놓자는 의미로 쓰임
